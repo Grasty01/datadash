@@ -1,0 +1,275 @@
+/* Aside */
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand span {
+  color: var(--sun);
+}
+
+.side-link {
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #b9c6de;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.side-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.side-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.side-link.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* La barre de recherche */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--panel);
+  border-radius: 100px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(20, 33, 61, 0.06);
+  min-width: 320px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  color: var(--ink);
+}
+
+.history-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: var(--panel);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  color: var(--grey);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(20, 33, 61, 0.05);
+  border: none;
+}
+
+.tag.current {
+  background: var(--dusk);
+  color: #fff;
+}
+
+/* Le chargement */
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #dce3ee;
+  border-top-color: var(--sky);
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-retry {
+  margin-top: 12px;
+  background: var(--dusk);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Héro section */
+.hero-card {
+  background: linear-gradient(135deg, var(--dusk), var(--sky));
+  border-radius: 24px;
+  padding: 36px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 184, 77, 0.35),
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.hero-city {
+  font-size: 15px;
+  color: #cbd9ef;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-city .city-name {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.hero-icon {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.hero-temp {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 18px 0 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: #dce6f5;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  text-transform: capitalize;
+}
+
+.hero-stat {
+  font-size: 13px;
+  color: #b9c6de;
+}
+
+.hero-stat b {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.widget {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 10px rgba(20, 33, 61, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.widget-label {
+  font-size: 12px;
+  color: var(--grey);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.widget-value {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.widget-value span {
+  font-size: 14px;
+  color: var(--grey);
+  font-weight: 500;
+}
+
+.widget-bar {
+  height: 6px;
+  background: #e4eaf2;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.widget-bar div {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 100px;
+  transition: width 0.3s ease;
+}
+
+/* C'est ici que je stylise la boite des prévisions de 5 jours */
+.panel {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 26px 28px;
+  box-shadow: 0 2px 10px rgba(20, 33, 61, 0.06);
+}
+
+.panel-head h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.panel-head span {
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.fc-day {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+.fc-day .d {
+  font-size: 12px;
+  color: var(--grey);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.fc-day .ic {
+  width: 40px;
+  margin: 0 auto 8px;
+}
+
+.fc-day .t {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fc-day .t small {
+  color: var(--grey);
+  font-weight: 500;
+  font-size: 13px;
+}
