@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataDash — Dashboard météo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">Data<span>Dash</span></div>
+        <a class="side-link active" href="#dashboard">☁️ Météo actuelle</a>
+        <a class="side-link" href="#forecast">📈 Prévisions</a>
+        <a class="side-link" href="#history">🕘 Historique</a>
+        <div class="side-link disabled">⚙️ Paramètres</div>
+        <div class="side-foot mono" id="side-sync">
+          API OpenWeatherMap<br />Dernière synchro: —
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="topbar">
+          <div class="search-box">
+            🔍
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Rechercher une ville..."
+            />
+          </div>
+          <div class="history-tags" id="history-tags"></div>
+        </div>
+
+        <div class="state-box" id="loader" style="display: none">
+          <div class="spinner"></div>
+          <p>Chargement des données météo...</p>
+        </div>
+
+        <div class="state-box error" id="error-box" style="display: none">
+          <p id="error-message">⚠️ Ville introuvable ou clé API invalide.</p>
+          <button class="btn-retry" id="retry-btn">Réessayer</button>
+        </div>
+
+        <div id="dashboard-content">
+          <section id="dashboard" class="grid">
+            <div class="hero-card" id="hero-card">
+              <div class="hero-top">
+                <div class="hero-city">
+                  <span id="hero-date">—</span>
+                  <span class="city-name" id="hero-city-name">—</span>
+                </div>
+                <img class="hero-icon" id="hero-icon" alt="Icône météo" />
+              </div>
+              <div class="hero-temp" id="hero-temp">—°</div>
+              <div class="hero-desc" id="hero-desc">—</div>
+              <div class="hero-stats">
+                <div class="hero-stat">Humidité<b id="stat-humidity">—</b></div>
+                <div class="hero-stat">Vent<b id="stat-wind">—</b></div>
+                <div class="hero-stat">
+                  Lever du soleil<b id="stat-sunrise">—</b>
+                </div>
+                <div class="hero-stat">Coucher<b id="stat-sunset">—</b></div>
+              </div>
+            </div>
+
+            <div class="side-widgets">
+              <div class="widget">
+                <div class="widget-label">Pression atmosphérique</div>
+                <div class="widget-value" id="widget-pressure">
+                  — <span>hPa</span>
+                </div>
+                <div class="widget-bar"><div id="pressure-bar"></div></div>
+              </div>
+              <div class="widget">
+                <div class="widget-label">Visibilité</div>
+                <div class="widget-value" id="widget-visibility">
+                  — <span>km</span>
+                </div>
+                <div class="widget-bar"><div id="visibility-bar"></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="forecast">
+            <div class="panel-head">
+              <h3>Prévisions sur 5 jours</h3>
+              <span class="mono">Mise à jour toutes les 3h</span>
+            </div>
+            <div class="forecast-row" id="forecast-row"></div>
+          </section>
+        </div>
+
+        <footer id="history">
+          DataDash — Copyright - Grâsty Ghyvet SAMBA DINAULT
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
