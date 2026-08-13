@@ -1,0 +1,52 @@
+:root {
+  --dusk: #1b2a4a;
+  --sky: #4a7fb5;
+  --sun: #ffb84d;
+  --cloud: #f0f4f8;
+  --teal: #2dd4bf;
+  --ink: #14213d;
+  --grey: #6e7a94;
+  --panel: #ffffff;
+  --bg: #eef2f7;
+  --red: #d6486b;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Règles déplacées depuis les attributs inline de index.html */
+#loader,
+#error-box {
+  display: none;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DataDash — Dashboard météo</title>
+    <title>DataDash — météo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -24,15 +24,12 @@
         <a class="side-link" href="#forecast">📈 Prévisions</a>
         <a class="side-link" href="#history">🕘 Historique</a>
         <div class="side-link disabled">⚙️ Paramètres</div>
-        <div class="side-foot mono" id="side-sync">
-          API OpenWeatherMap<br />Dernière synchro: —
-        </div>
+        <div class="side-foot mono" id="side-sync">Dernière mise à jours :</div>
       </aside>
 
       <main class="main">
         <div class="topbar">
           <div class="search-box">
-            🔍
             <input
               type="text"
               id="search-input"
@@ -42,12 +39,12 @@
           <div class="history-tags" id="history-tags"></div>
         </div>
 
-        <div class="state-box" id="loader" style="display: none">
+        <div class="state-box" id="loader">
           <div class="spinner"></div>
           <p>Chargement des données météo...</p>
         </div>
 
-        <div class="state-box error" id="error-box" style="display: none">
+        <div class="state-box error" id="error-box">
           <p id="error-message">⚠️ Ville introuvable ou clé API invalide.</p>
           <button class="btn-retry" id="retry-btn">Réessayer</button>
         </div>
